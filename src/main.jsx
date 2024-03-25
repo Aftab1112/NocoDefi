@@ -16,6 +16,17 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
+const Mumbai = {
+  id: 80001,
+  name: 'Mumbai',
+  iconUrl: 'https://chainlist.org/unknown-logo.png',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Mumbai', symbol: 'Matic', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://polygon-testnet.public.blastapi.io'] },
+  },
+}
+
 const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
@@ -26,7 +37,8 @@ const config = getDefaultConfig({
     arbitrum,
     base,
     zora,
-    sepolia
+    sepolia,
+    Mumbai
   ],
   ssr: true,
 });

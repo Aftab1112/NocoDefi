@@ -1,13 +1,13 @@
+// App.js
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
 import ERC20Token from './components/ERC20Token';
+import { useState } from 'react';
 
 const App = () => {
-  const { address } = useAccount();
+  const [show, setShow] = useState(false);
 
   return (
     <div className='w-full h-screen'>
-
       <div className='h-[65px] bg-slate-700 flex items-center  '>
         <div className='w-full px-5 flex justify-between items-center '>
           <h1>Testing</h1>
@@ -15,24 +15,23 @@ const App = () => {
         </div>
       </div>
 
-      <div className='w-full h-full  flex'>
-          <div className='w-[20%]  px-6 bg-black' >
-              <div className='w-full h-[600px]  my-10 flex flex-col gap-16  justify-center text-xl font-semibold '>
-                <button className=' text-white text-xl py-6 px-0  rounded-md bg-gradient-to-r from-cyan-600 to to-blue-800 cursor-pointer hover:boxshadow duration-500'>Create Your Own ERC20 Token</button>
-                <button className=' text-white text-xl py-6 px-0  rounded-md bg-gradient-to-r from-cyan-600 to to-blue-800 cursor-pointer hover:boxshadow duration-500'>Create Your Own NFT</button>
-                <button className=' text-white text-xl py-6 px-0  rounded-md bg-gradient-to-r from-cyan-600 to to-blue-800 cursor-pointer hover:boxshadow duration-500'>Create Your Own Dapp</button>
-                <button className=' text-white text-xl py-6 px-0  rounded-md bg-gradient-to-r from-cyan-600 to to-blue-800 cursor-pointer hover:boxshadow duration-500'>Create Your Own Defi PLatform</button>
-              </div>
+       {/* Main Content */}
+       <div className='flex-grow flex'>
+        {/* Sidebar */}
+        <div className='w-[30%] px-6 bg-black'>
+          <div className='my-10 flex flex-col gap-14 text-white'>
+            <button onClick={() => setShow(!show)} className='text-xl py-3 px-4 rounded-md bg-gradient-to-r from-cyan-600 to-blue-800 hover:from-cyan-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-300'>Create Your Own ERC20 Token</button>
+            <button className='text-xl py-3 px-4 rounded-md bg-gradient-to-r from-cyan-600 to-blue-800 hover:from-cyan-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-300'>Create Your Own NFT</button>
+            <button className='text-xl py-3 px-4 rounded-md bg-gradient-to-r from-cyan-600 to-blue-800 hover:from-cyan-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-300'>Create Your Own Dapp</button>
+            <button className='text-xl py-3 px-4 rounded-md bg-gradient-to-r from-cyan-600 to-blue-800 hover:from-cyan-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-300'>Create Your Own Defi Platform</button>
           </div>
+        </div>
 
-          <div  className='w-[50%] '>
-             <ERC20Token/>
-          </div>
+        {/* Main Content Area */}
+        <div className='w-[80%] bg-gray-100 p-8'>
+          {show && <ERC20Token />}
+        </div>
       </div>
-
-
-      
-
     </div>
   );
 };
