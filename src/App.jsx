@@ -19,7 +19,7 @@ const App = () => {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen ">
       <div className="h-[70px] bg-gradient-to-b from-black to  bg-slate-900 flex items-center shadow-lg py-10 ">
         <div className="w-full px-12 flex justify-between items-center ">
           <h2 className="text-gradient text-5xl flex items-center gap-5 text-white font-semibold cursor-pointer tracking-wider ">
