@@ -75,10 +75,10 @@ const ERC20Token = () => {
   // console.log(token);
 
   return (
-    <div className="flex justify-center items-center h-full bg-gradient-to-b from-indigo-300 to-gray-900 ">
+    <div className="flex justify-center items-center h-screen w-[80%]  bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] bg-slate-950 ">
       {!isConfirmed && (
         <form
-          className="flex flex-col gap-6  bg-gray-100 p-8 rounded-lg shadow-md w-[490px]  h-[350px]  border border-blue-100  "
+          className="flex flex-col gap-6  bg-gray-100 p-8  shadow-md w-[490px]  h-[350px]  border border-blue-100  "
           onSubmit={handleSubmit}
         >
           <input
